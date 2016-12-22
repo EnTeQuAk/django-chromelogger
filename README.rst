@@ -17,10 +17,6 @@ This module implements simple support for Django. It consists of two components:
 * `LoggingMiddleware` which is responsible for sending all log messages associated with the request to the browser.
 * `ChromeLoggerHandler` a python logging handler which collects all messages.
 
-.. hint::
-
-    The documentation and library is still work in progress. Please use at your own risk.
-
 
 Configuration in settings.py is as follows:
 

@@ -1,3 +1,4 @@
+import base64
 import json
 import logging
 import threading
@@ -26,9 +27,12 @@ def map_level(level):
 
 def encode_data(data):
     """Return a base64 encoded json dump."""
-    bytes = json.dumps(data).encode('utf-8').encode('base64').replace('\n', '')
-    assert len(bytes) < 250 * 1024
-    return bytes
+    encoded = base64.b64encode(
+        json.dumps(data).encode('utf-8')
+    )
+
+    assert len(encoded) < 250 * 1024
+    return encoded
 
 
 class ChromeLoggerHandler(logging.Handler):
