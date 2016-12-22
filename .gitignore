@@ -1,0 +1,7 @@
+*.py[co]
+*.egg-info
+*.db
+*.sw[po]
+.cache
+.tox
+dist
